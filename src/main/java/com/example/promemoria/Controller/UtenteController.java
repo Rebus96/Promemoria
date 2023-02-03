@@ -11,16 +11,16 @@ public class UtenteController {
     @Autowired
     private UtenteService utenteService;
 
-    @GetMapping("/utentui")
+    @GetMapping("/utente")
     public List<Utente> getAllUtenti (){
         return utenteService.getAllUtenti();
     }
-    @PostMapping("/utenti")
+    @PostMapping("/utente")
     public List<Utente> saveAll(@RequestBody List<Utente> a){
         return utenteService.saveUtenti(a);
     }
-    @DeleteMapping("/utenti")
-    public void deletebyid (@PathVariable Long Id){
+    @DeleteMapping("/utente")
+    public void deletebyId (@PathVariable Long Id){
         utenteService.deletebyId(Id);
 
     }

@@ -20,7 +20,7 @@ public class Promemoria {
   @Column(name = "descrizione")
     private String descrizione;
   @Column(name = "data")
-    private Long data;
+    private String data;
   @Column(name = "ora")
     private Long ora;
   @Column(name = "fatto")
