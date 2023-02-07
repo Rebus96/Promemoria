@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
+@RequestMapping("/promemoriautente")
 public class PromemoriaController {
     @Autowired
     private PromemoriaService promemoriaService;

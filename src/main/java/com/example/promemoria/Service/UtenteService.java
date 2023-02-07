@@ -15,6 +15,8 @@ public class UtenteService {
         return untenteRepository.saveAll(utenteList);
     }
 
+    public List<Utente> findById(Long Id){ return untenteRepository.findAllById(Id);}
+
 
     public List<Utente> getAllUtenti(){
         return untenteRepository.findAll();
