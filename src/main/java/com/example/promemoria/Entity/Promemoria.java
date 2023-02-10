@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
+@Entity
 public class Promemoria {
   @Id
           @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +27,5 @@ public class Promemoria {
     private String fatto;
   @Column(name = "stato")
     private String stato;
-  @OneToMany
-  private Utente utente;
+
 }

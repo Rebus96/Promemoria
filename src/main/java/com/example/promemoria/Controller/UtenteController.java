@@ -12,6 +12,7 @@ import java.util.List;
 public class UtenteController {
     @Autowired
     private UtenteService utenteService;
+    /*
 
     @GetMapping("/utente")
     public List<Utente> getAllUtenti (){
@@ -29,5 +30,12 @@ public class UtenteController {
     public void deletebyId (@PathVariable Long Id){
         utenteService.deletebyId(Id);
 
-    }
+    }/*
+
+
+     */
+    @PostMapping
+     public Utente save(@RequestBody Utente utente){
+         return utenteService.save(utente);
+     }
 }

@@ -27,4 +27,7 @@ public class UtenteService {
         untenteRepository.deleteById(Id);
 
     }
+    public Utente save(Utente utente){
+        return untenteRepository.save(utente);
+    }
 }

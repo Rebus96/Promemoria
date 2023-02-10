@@ -13,7 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table
 public class Utente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +22,7 @@ public class Utente {
     private String firstname;
 @Column(name = "lastname")
     private String lastname;
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "utenti")
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     List<Utente> rebecca;
 }
 

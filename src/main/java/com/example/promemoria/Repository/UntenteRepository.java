@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface UntenteRepository extends JpaRepository<Utente, Long> {
       List<Utente> findAllById (Long Id);
-      List<Utente> findByFirstname (String nome);
-      List<Utente> findByLastname (String cognome);
+     // List<Utente> findByFirstname (String nome);
+    //  List<Utente> findByLastname (String cognome);
 
       List<Utente> findAll();
 }
