@@ -18,12 +18,12 @@ public class Utente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long Id;
 
-@Column(name = "firtname")
+    @Column(name = "firstname")
     private String firstname;
-@Column(name = "lastname")
+    @Column(name = "lastname")
     private String lastname;
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    List<Utente> rebecca;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    List<Utente> Utenti;
 }
 
 

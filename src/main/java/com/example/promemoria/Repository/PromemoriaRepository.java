@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface PromemoriaRepository extends JpaRepository<Promemoria, Long> { /*
+public interface PromemoriaRepository extends JpaRepository<Promemoria, Long> {
     List<Promemoria> findAllById (Long Id);
     List<Promemoria> findByTitolo (String titolo);
     List<Promemoria> findByDescrizione (String descrizione);
@@ -13,5 +13,5 @@ public interface PromemoriaRepository extends JpaRepository<Promemoria, Long> { 
     List<Promemoria> findByOra (Long ora);
     List<Promemoria> findByFatto (String fatto);
     List<Promemoria> findByStato (String stato);
-    */
+
 }
