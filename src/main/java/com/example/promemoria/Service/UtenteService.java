@@ -35,4 +35,11 @@ public class UtenteService {
         return utenteRepository.save(utente);
     }
 
-}
+    public Utente findAllById(Long id) { return utenteRepository.findAllById(id);
+    }
+
+
+
+    }
+
+

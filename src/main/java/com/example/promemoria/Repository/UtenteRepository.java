@@ -12,4 +12,6 @@ public interface UtenteRepository extends JpaRepository<Utente, Long> {
       List<Utente> findByLastname (String cognome);
 
       List<Utente> findAll();
+
+
 }
