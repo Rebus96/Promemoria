@@ -24,17 +24,15 @@ public class UtenteController {
     public Utente getUtenteById(@PathVariable Long id){
         return utenteService.findAllById(id);
     }
-    @PostMapping("/utente")
-    public List<Utente> saveAll(@RequestBody List<Utente> a){
-        return utenteService.saveUtenti(a);
-    }
+
+
     @DeleteMapping("/utente/{id}")
     public void deleteUtenti(@PathVariable Long id){
         Utente utente = utenteService.findAllById(id);
         utenteService.deletebyId(id);
     }
 
-    @PostMapping
+    @PostMapping("/utente")
      public Utente save(@RequestBody Utente utente){
          return utenteService.save(utente);
      }
