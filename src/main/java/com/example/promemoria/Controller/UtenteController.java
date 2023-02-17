@@ -21,7 +21,7 @@ public class UtenteController {
         return utenteService.getAllUtenti();
     }
     @GetMapping("/utente/{id}")
-    public Utente getPersonaById(@PathVariable Long id){
+    public Utente getUtenteById(@PathVariable Long id){
         return utenteService.findAllById(id);
     }
     @PostMapping("/utente")
