@@ -2,6 +2,7 @@ package com.example.promemoria.Controller;
 
 import com.example.promemoria.Entity.Utente;
 import com.example.promemoria.Service.UtenteService;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,8 +29,9 @@ public class UtenteController {
         return utenteService.saveUtenti(a);
     }
     @DeleteMapping("/utente/{id}")
-    public void deleteUtenti(Long Id){
-        utenteService.deletebyId(Id);
+    public void deleteUtenti(@PathVariable Long id){
+        Utente utente = utenteService.findAllById(id);
+        utenteService.deletebyId(id);
     }
 
     @PostMapping

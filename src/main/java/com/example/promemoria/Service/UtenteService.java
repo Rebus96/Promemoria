@@ -15,19 +15,19 @@ public class UtenteService {
         return utenteRepository.saveAll(utenteList);
     }
 
-    public Utente findById(Long Id){ return utenteRepository.findAllById(Id);}
+    public Utente findById(Long id){ return utenteRepository.findAllById(id);}
 
 
     public List<Utente> getAllUtenti(){
         return utenteRepository.findAll();
     }
 
-    public Utente updateUtenti(Long Id){ return utenteRepository.findAllById(Id);
+    public Utente updateUtenti(Long id){ return utenteRepository.findAllById(id);
     }
 
 
-    public void deletebyId(Long Id){
-        utenteRepository.deleteById(Id);
+    public void deletebyId(Long id){
+        utenteRepository.deleteById(id);
 
     }
     public Utente save(Utente utente){
