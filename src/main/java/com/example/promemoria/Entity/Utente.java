@@ -22,6 +22,8 @@ public class Utente {
     private String firstname;
     @Column(name = "lastname")
     private String lastname;
+    @Column(name = "eta")
+    private Long eta;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     List<Utente> Utenti;
 }

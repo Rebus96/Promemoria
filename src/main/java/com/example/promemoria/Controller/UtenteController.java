@@ -17,35 +17,39 @@ public class UtenteController {
 
 
     @GetMapping("/utente")
-    public List<Utente> getAllUtenti (){
+    public List<Utente> getAllUtenti() {
         return utenteService.getAllUtenti();
     }
+
     @GetMapping("/utente/{id}")
-    public Utente getUtenteById(@PathVariable Long id){
+    public Utente getUtenteById(@PathVariable Long id) {
         return utenteService.findAllById(id);
     }
 
 
     @DeleteMapping("/utente/{id}")
-    public void deleteUtenti(@PathVariable Long id){
+    public void deleteUtenti(@PathVariable Long id) {
         Utente utente = utenteService.findAllById(id);
         utenteService.deletebyId(id);
     }
 
     @PostMapping("/utente")
-     public Utente save(@RequestBody Utente utente){
-         return utenteService.save(utente);
-     }
-    @PutMapping("/utente/{id}")
-    public ResponseEntity<Utente> updateUtente(@PathVariable(value = "id") Long id, @RequestBody Utente dettagliutente ){
-      Utente utente = utenteService.findById(id);
-
-       utente.setFirstname(dettagliutente.getFirstname());
-       utente.setLastname(dettagliutente.getLastname());
-        final Utente updatedUtente = utenteService.save(utente);
-        return ResponseEntity.ok(updatedUtente);
-
-
-
+    public Utente save(@RequestBody Utente utente) {
+        return utenteService.save(utente);
     }
+
+
+    @GetMapping("/utente/{firstname}")
+    public List<Utente> findByFirstname(@PathVariable String firstName) {
+        return utenteService.findByFirstname(firstName);
+    }
+    @GetMapping("/utente/{lastname}")
+    public List<Utente> findByLastname(@PathVariable String lastName){
+        return utenteService.findByLastname(lastName);
+    }
+    @GetMapping("/utente/{firstname}")
+    public List<Utente> findByOrderByFirstnameAsc(@PathVariable String firstName){
+        return utenteService.findByOrderByFirstnameAsc();
+    }
+
 }

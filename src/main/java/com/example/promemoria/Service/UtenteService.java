@@ -22,8 +22,6 @@ public class UtenteService {
         return utenteRepository.findAll();
     }
 
-    public Utente updateUtenti(Long id){ return utenteRepository.findAllById(id);
-    }
 
 
     public void deletebyId(Long id){
@@ -37,7 +35,15 @@ public class UtenteService {
 
     public Utente findAllById(Long id) { return utenteRepository.findAllById(id);
     }
-
+    public List<Utente> findByFirstname(String firstName){
+        return utenteRepository.findByFirstname(firstName);
+    }
+    public List<Utente> findByLastname(String lastName){
+        return utenteRepository.findByLastname(lastName);
+    }
+    public List<Utente> findByOrderByFirstnameAsc(){
+        return utenteRepository.findAllByOrderByFirstnameAsc();
+    }
 
 
     }
