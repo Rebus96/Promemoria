@@ -16,15 +16,15 @@ public class UtenteController {
     private UtenteService utenteService;
 
 
-    @GetMapping("/utente")
-    public List<Utente> getAllUtenti() {
-        return utenteService.getAllUtenti();
-    }
+    //@GetMapping("/utente")
+    //public List<Utente> getAllUtenti() {
+       // return utenteService.getAllUtenti();
+    //}
 
-    @GetMapping("/utente/{id}")
-    public Utente getUtenteById(@PathVariable Long id) {
-        return utenteService.findAllById(id);
-    }
+   // @GetMapping("/utente/{id}")
+    //public Utente getUtenteById(@PathVariable Long id) {
+      //  return utenteService.findAllById(id);
+    //}
 
 
     @DeleteMapping("/utente/{id}")
@@ -39,16 +39,16 @@ public class UtenteController {
     }
 
 
-    @GetMapping("/utente/{firstname}")
-    public List<Utente> findByFirstname(@PathVariable String firstName) {
-        return utenteService.findByFirstname(firstName);
-    }
-    @GetMapping("/utente/{lastname}")
-    public List<Utente> findByLastname(@PathVariable String lastName){
-        return utenteService.findByLastname(lastName);
-    }
-    @GetMapping("/utente/{firstname}")
-    public List<Utente> findByOrderByFirstnameAsc(@PathVariable String firstName){
+    //@GetMapping("/utente/{firstname}")
+   // public List<Utente> findByFirstname(@PathVariable String firstName) {
+       // return utenteService.findByFirstname(firstName);
+   // }
+    //@GetMapping("/utente/{lastname}")
+    //public List<Utente> findByLastname(@PathVariable String lastName){
+       // return utenteService.findByLastname(lastName);
+    //}
+    @GetMapping("/utente")
+    public List<Utente> findByOrderByFirstnameAsc(){
         return utenteService.findByOrderByFirstnameAsc();
     }
 
