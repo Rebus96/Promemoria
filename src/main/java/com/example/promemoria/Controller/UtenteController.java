@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -56,10 +57,21 @@ public class UtenteController {
 
     @GetMapping("/utente/page")
     public Page<Utente> findAllPage(@RequestParam(value = "page", required = false, defaultValue = "0") int page,
-                                    @RequestParam(value = "size", required = false, defaultValue = "5") int size)
+                                    @RequestParam(value = "size", required = false, defaultValue = "5") int size,
+                                    @RequestParam(value = "sort", required = false, defaultValue = "firstname") String sort,
+                                    @RequestParam(value = "sortDirection", required = false, defaultValue = "true") boolean sortDirenction)
+
+
     {
-        Pageable pageable = PageRequest.of(page,size);
+        Pageable pageable;
+       if (sortDirenction){
+            pageable = PageRequest.of(page,size,Sort.by(sort).ascending());
+       } else{
+            pageable = PageRequest.of(page,size,Sort.by(sort).descending());
+       }
         return utenteService.findAllPage(pageable);
+
     }
+
 
 }
